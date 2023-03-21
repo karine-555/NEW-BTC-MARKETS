@@ -72,6 +72,7 @@ nav .nav .nav__items .nav__bnts button#login {
 nav .nav .nav__items .nav__bnts button#signup {
   border: 1px solid #4cfdc7;
   background: #4cfdc7;
+  color: #01271c;
 }
 @media screen and (max-width: 890px) {
   nav .nav .logo svg {
