@@ -4,16 +4,20 @@ $nativeBlack: #000000;
 $greenBlack: #01271c;
 $primary: #4cfdc7;
 $red: #f43f5e;
-$grey: #71717a;
+$darkGray: #71717a;
 $footerBlack: #3f3f46;
+$lightGray: #a1a1aa;
+$green: #10b981;
+$grayBorder: #f4f4f5;
 
 $tablet: 1024px;
 $mobileL: 768px;
 $mobileM: 580px;
 $mobileS: 480px;
-$mobileXS:380px;
+$mobileXS: 380px;
 
 $br: 4px;
+$tablePadding: 16px 0px;
 
 @font-face {
   font-family: "regular";
@@ -67,8 +71,8 @@ nav {
           a {
             color: $firstBlacklack;
             text-decoration: none;
-            &:hover{
-              color:$primary;
+            &:hover {
+              color: $primary;
             }
           }
         }
@@ -93,7 +97,7 @@ nav {
           &#signup {
             border: 1px solid $primary;
             background: $primary;
-            color:$greenBlack;
+            color: $greenBlack;
           }
         }
       }
@@ -139,25 +143,25 @@ nav {
       .nav__items {
         .nav__bnts {
           button {
-           padding: 5px 10px;
+            padding: 5px 10px;
             &#login,
             &#signup {
               svg {
                 display: block;
               }
-             span{
-              display: none;
-             }
+              span {
+                display: none;
+              }
             }
           }
         }
       }
     }
-    @media screen and (max-width:$mobileXS){
-      .nav__items{
-        .nav__bnts{
-          button{
-            padding:6px 12px;
+    @media screen and (max-width: $mobileXS) {
+      .nav__items {
+        .nav__bnts {
+          button {
+            padding: 6px 12px;
           }
         }
       }
@@ -165,85 +169,83 @@ nav {
   }
 }
 
-header{
-  .header{
+header {
+  .header {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     padding-top: 130px;
-    gap:64px;
-    .header__left{
+    gap: 64px;
+    .header__left {
       max-width: 659px;
-      h1{
+      h1 {
         font-size: min(71px, max(35px + 2vw));
         font-weight: 400;
-        color:$nativeBlack;
+        color: $nativeBlack;
         margin: 0;
       }
-      p{
-        margin:34px 0px;
+      p {
+        margin: 34px 0px;
         max-width: 461px;
-        color:$secondBlack;
+        color: $secondBlack;
       }
-      .header__left__btns{
+      .header__left__btns {
         display: flex;
-        gap:16px;
+        gap: 16px;
         margin-bottom: 16px;
-        a{
+        a {
           display: block;
-          padding:9px 33px;
-          border-radius:$br;
+          padding: 9px 33px;
+          border-radius: $br;
           text-decoration: none;
-          &:nth-child(1){
-            background:$primary;
-            color:$greenBlack;
+          &:nth-child(1) {
+            background: $primary;
+            color: $greenBlack;
           }
-          &:nth-child(2){
-            background:transparent;
-            border:1px solid $firstBlacklack;
+          &:nth-child(2) {
+            background: transparent;
+            border: 1px solid $firstBlacklack;
           }
-
         }
       }
-      .header__left__stars{
+      .header__left__stars {
         display: flex;
-        gap:8px;
-        align-items:center;
+        gap: 8px;
+        align-items: center;
         user-select: none;
-        color:$secondBlack;
+        color: $secondBlack;
       }
-
     }
-    .header__right{
-
+    .header__right {
     }
-    @media screen and (max-width:$mobileL){
+    @media screen and (max-width: $mobileL) {
       justify-content: center;
       flex-wrap: wrap;
       text-align: center;
       padding-top: 65px;
 
-      .header__left{
-        .header__left__btns, .header__left__stars{
+      .header__left {
+        .header__left__btns,
+        .header__left__stars {
           justify-content: center;
         }
       }
     }
 
-    @media screen and (max-width:$mobileS){
+    @media screen and (max-width: $mobileS) {
       padding-top: 32.5px;
-      .header__left{
-        .header__left__btns{
-         flex-wrap: wrap;
-         a{
-          width: 100%;
-         }
+      .header__left {
+        .header__left__btns {
+          flex-wrap: wrap;
+          a {
+            width: 100%;
+          }
         }
       }
-      .header__right{
-        .header__right__img{
-          img{
-            width:100%;
+      .header__right {
+        .header__right__img {
+          img {
+            width: 100%;
           }
         }
       }
@@ -251,9 +253,99 @@ header{
   }
 }
 
+main {
+  min-height: 1500px;
+  .markets__section {
+    .markets {
+      box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 32px;
+      .markets__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        h4 {
+          font-weight: 400;
+          color: $darkGray;
+          cursor: pointer;
 
+          &.active {
+            color: $firstBlacklack;
+          }
+        }
+      }
+      .markets__table {
+        overflow-y: hidden;
+        overflow-x: auto;
+        table {
+          border-collapse: collapse;
+          width: 1072px;
 
-
+          tbody {
+            tr {
+              border-bottom: 1px solid $grayBorder;
+              th {
+                padding: $tablePadding;
+                text-align: left;
+                color: $firstBlacklack;
+                font-weight: 400;
+                border-bottom: 1px solid $grayBorder;
+              }
+              td {
+                padding: $tablePadding;
+                color: $firstBlacklack;
+                font-weight: 400;
+                div {
+                }
+                span {
+                  &.aud {
+                    color: $lightGray;
+                    font-size: 14px;
+                  }
+                  &.up {
+                    color: $green;
+                  }
+                  &.down {
+                    color: $red;
+                  }
+                }
+                &:nth-child(1),
+                &:nth-child(3) {
+                  display: flex;
+                  align-items: center;
+                  gap: 16px;
+                }
+                a {
+                  display: block;
+                  text-decoration: none;
+                  padding: $tablePadding;
+                  background: $primary;
+                  border-radius: $br;
+                  color: $greenBlack;
+                  cursor: pointer;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .markets__view__all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 22px;
+        a {
+          color: $firstBlacklack;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
