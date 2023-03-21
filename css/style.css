@@ -103,7 +103,7 @@ nav .nav .nav__items .nav__bnts button#signup {
     display: block;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 580px) {
   nav .nav .nav__items .nav__bnts button {
     padding: 5px 10px;
   }
@@ -112,6 +112,80 @@ nav .nav .nav__items .nav__bnts button#signup {
   }
   nav .nav .nav__items .nav__bnts button#login span, nav .nav .nav__items .nav__bnts button#signup span {
     display: none;
+  }
+}
+
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 130px;
+  gap: 64px;
+}
+header .header .header__left {
+  max-width: 659px;
+}
+header .header .header__left h1 {
+  font-size: min(71px, max(35px + 2vw));
+  font-weight: 400;
+  color: #000000;
+}
+header .header .header__left p {
+  margin: 34px 0px;
+  max-width: 461px;
+  color: #27272a;
+}
+header .header .header__left .header__left__btns {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+header .header .header__left .header__left__btns a {
+  display: block;
+  padding: 9px 33px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+header .header .header__left .header__left__btns a:nth-child(1) {
+  background: #4cfdc7;
+  color: #01271c;
+}
+header .header .header__left .header__left__btns a:nth-child(2) {
+  background: transparent;
+  border: 1px solid #18181b;
+}
+header .header .header__left .header__left__stars {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #27272a;
+}
+@media screen and (max-width: 768px) {
+  header .header {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 65px;
+  }
+  header .header .header__left .header__left__btns, header .header .header__left .header__left__stars {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  header .header {
+    padding-top: 32.5px;
+  }
+  header .header .header__left .header__left__btns {
+    flex-wrap: wrap;
+  }
+  header .header .header__left .header__left__btns a {
+    width: 100%;
+  }
+  header .header .header__right .header__right__img img {
+    width: 100%;
   }
 }
 
