@@ -9,6 +9,7 @@ $footerBlack: #3f3f46;
 $lightGray: #a1a1aa;
 $green: #10b981;
 $grayBorder: #f4f4f5;
+$backgroundGray: #fafafa;
 
 $tablet: 1024px;
 $mobileL: 768px;
@@ -218,11 +219,17 @@ header {
     }
     .header__right {
     }
+
+    @media screen and (max-width: 800px) {
+      gap: 32px;
+    }
+
     @media screen and (max-width: $mobileL) {
       justify-content: center;
       flex-wrap: wrap;
       text-align: center;
       padding-top: 65px;
+      gap: 64px;
 
       .header__left {
         .header__left__btns,
@@ -255,6 +262,7 @@ header {
 
 main {
   .markets__section {
+    margin-bottom: 128px;
     .markets {
       box-shadow: 0px 0px 16px rgba(9, 24, 26, 0.04);
       border-radius: 8px;
@@ -407,81 +415,214 @@ main {
     }
   }
 
-  .trade__section {
-   
-    h4 {
-      font-size: 16px;
-      font-weight: 400;
-      color: $firstBlacklack;
+  .template__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 128px;
+    &:nth-child(odd) {
+      .template__section__cover {
+        order: 1;
+      }
+      .template__section__content {
+        order: 2;
+      }
+
+      @media screen and (max-width: $tablet) {
+        .template__section__cover {
+          order: 2;
+        }
+        .template__section__content {
+          order: 1;
+        }
+      }
     }
 
-    .trade__section__blocks {
-      display: flex;
-      justify-content: space-between;
-      gap:32px;
-     
-      .trade__section__left {
-      flex:1 1 550px;
-        h2 {
-          font-size: min(40px, max(20px + 2vw));
-          font-weight: 400;
-          color: $firstBlacklack;
-        }
-        .trade__items {
-          margin-top: 64px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 64px;
-          .trade__item {
-            flex:1 1 calc(100% / 3);
-            .icon {
-              svg {
-              }
-            }
-            h6 {
-              font-size: 16px;
-              color: $firstBlacklack;
-              font-weight: 400;
-              margin: 8px 0px 18px 0px;
-            }
-            p {
-              color: $secondBlack;
-              font-size: 15px;
-              line-height: 24px;
-            }
-          }
-        }
+    .template__section__content {
+      flex: 1 1 550px;
+      h4 {
+        font-size: 16px;
+        font-weight: 400;
+        color: $firstBlacklack;
+        text-transform: uppercase;
       }
-      .trade__section__right{
-        flex:1 1 550px;
-        .trade__section__right__img{
-          img{
-            width: 100%;
-          }
-        }
+      h2 {
+        font-size: min(40px, max(20px + 2vw));
+        font-weight: 400;
+        color: $firstBlacklack;
       }
-
-      @media screen and (max-width:$tablet){
+      .template__section__content__items {
+        margin-top: 64px;
+        display: flex;
         flex-wrap: wrap;
-      }
-
-      @media screen and (max-width:$mobileM){
-        .trade__section__left{
-          h2{
-            text-align: center;
-          }
-          .trade__items{
-            .trade__item{
-              flex:1 1 100%;
-              flex-wrap: wrap;
-              text-align: center;
+        gap: 64px;
+        .template__section__content__item {
+          flex: 1 1 calc(100% / 3);
+          .icon {
+            svg {
             }
+          }
+          h6 {
+            font-size: 16px;
+            color: $firstBlacklack;
+            font-weight: 400;
+            margin: 8px 0px 18px 0px;
+          }
+          p {
+            color: $secondBlack;
+            font-size: 15px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .template__section__cover {
+      flex: 1 1 550px;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+      .template__section__cover{
+        img{
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobileM) {
+      .template__section__content {
+        h2 {
+          text-align: center;
+        }
+        .template__section__content__items {
+          .template__section__content__item {
+            flex: 1 1 100%;
+            flex-wrap: wrap;
+            text-align: center;
           }
         }
       }
     }
   }
-  
+
+  .vip__program__section {
+    background-color: $backgroundGray;
+    padding-top: 128px;
+    .container {
+      .vip__program__content {
+        max-width: 710px;
+        margin: 0 auto;
+        h4 {
+          font-size: 16px;
+          font-weight: 400;
+          color: $firstBlacklack;
+          text-align: center;
+          margin: 0;
+        }
+        h2 {
+          font-size: min(40px, max(20px + 2vw));
+          color: $firstBlacklack;
+          font-weight: 400;
+          text-align: center;
+          letter-spacing: 0.1px;
+          margin: 16px 0px 32px 0px;
+        }
+        p {
+          color: $secondBlack;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          text-align: center;
+          margin-bottom: 42px;
+        }
+        .vip__program__items {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 64px;
+          .vip__program__item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .icon {
+              svg {
+              }
+            }
+            h6 {
+              font-weight: 400;
+              font-size: 14px;
+              text-transform: capitalize;
+              margin: 0;
+            }
+          }
+          @media screen and (max-width: $mobileL) {
+            flex-wrap: wrap;
+          }
+          @media screen and (max-width: $mobileM) {
+            gap: 32px;
+          }
+          @media screen and (max-width: $mobileXS) {
+            .vip__program__item {
+              gap: 4px;
+              h6 {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          padding: 9px 36px;
+          width: fit-content;
+          color: $firstBlacklack;
+          border: 1px solid $firstBlacklack;
+          border-radius: $br;
+          margin-bottom: 64px;
+          margin: 64px auto 64px auto;
+        }
+      }
+      .vip__program__cover {
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    @media screen and (max-width: $mobileL) {
+      padding-top: 64px;
+    }
+  }
+
+
+
+  @media screen and (max-width: $mobileL) {
+    .markets__section,
+    .template__section {
+      margin-bottom: 64px;
+    }
+    .template__section {
+      .template__section__content {
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+
+    .markets__section {
+      .why__btc__markets {
+        .wbm__items {
+          gap: 32px;
+        }
+      }
+    }
+  }
+ 
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
